@@ -1,0 +1,3 @@
+/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license */
+/*! NOTE: If you're already including a window.matchMedia polyfill via Modernizr or otherwise, you don't need this part */
+var e,t,i,d,n,s,m;(e=Window).matchMedia=e.matchMedia||(t=e.document,d=t.documentElement,n=d.firstElementChild||d.firstChild,s=t.createElement("body"),(m=t.createElement("div")).id="mq-test-1",m.style.cssText="position:absolute;top:-100em",s.style.background="none",s.appendChild(m),function(e){return m.innerHTML='&shy;<style media="'+e+'"> #mq-test-1 { width: 42px; }</style>',d.insertBefore(s,n),i=42===m.offsetWidth,d.removeChild(s),{matches:i,media:e}});
