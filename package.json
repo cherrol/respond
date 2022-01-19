@@ -1,9 +1,9 @@
 {
-	"name": "Respond.js",
+	"name": "@cherrol/respond",
 	"description": "min/max-width media query polyfill",
-	"version": "1.4.2",
-	"homepage": "https://github.com/scottjehl/Respond",
-	"homepageShortened": "https://j.mp/respondjs",
+	"version": "1.4.3",
+	"homepage": "https://github.com/cherrol/respond",
+	"main": "dest/respond.js",
 	"author": {
 		"name": "Scott Jehl",
 		"email": "scott@filamentgroup.com",
@@ -11,23 +11,33 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/scottjehl/Respond.git"
+		"url": "git@github.com:cherrol/respond.git"
 	},
 	"bugs": {
-		"url": "https://github.com/scottjehl/Respond/issues"
+		"url": "https://github.com/cherrol/respond/issues"
 	},
 	"licenses": [
 		{
 			"type": "MIT",
-			"url": "https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT"
+			"url": "https://github.com/cherrol/respond/blob/master/LICENSE-MIT"
 		}
 	],
+	"scripts": {
+		"watch": "rimraf dest && rollup -c rollup.config.mjs -w",
+		"build": "rimraf dest && cross-env mode=prod rollup -c rollup.config.mjs"
+	},
 	"devDependencies": {
-		"grunt-cli":"~0.1",
-		"grunt": "~0.4.0",
-		"grunt-contrib-jshint": "~0.2.0",
-		"grunt-contrib-qunit": "~0.3.0",
-		"grunt-contrib-uglify": "0.2.7"
+		"@babel/core": "^7.16.7",
+		"@babel/preset-env": "^7.16.5",
+		"@rollup/plugin-babel": "^5.3.0",
+		"@rollup/plugin-commonjs": "^21.0.1",
+		"@rollup/plugin-node-resolve": "^13.1.3",
+		"@rollup/plugin-url": "^6.1.0",
+		"browserslist": "^4.19.1",
+		"cross-env": "^7.0.3",
+		"globby": "^12.0.2",
+		"rimraf": "^3.0.2",
+		"rollup": "^2.63.0",
+		"rollup-plugin-terser": "^7.0.2"
 	}
-
 }
